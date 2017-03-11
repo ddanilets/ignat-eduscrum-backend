@@ -1,0 +1,5 @@
+ignat_env
+*.pyc
+staticfiles
+.env
+.idea
