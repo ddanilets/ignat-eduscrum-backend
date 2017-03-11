@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from rest_framework import routers
-from ignat.views import users, project, ticket
+from views import users, project, ticket
 from django.contrib import admin
 
 router = routers.DefaultRouter()
