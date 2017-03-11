@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'ignat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ignat',
-        'USER': 'ignat_su',
-        'PASSWORD': 'su',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd49n3fg1jaqghb',
+        'USER': 'rsuqwqiyzjczqr',
+        'PASSWORD': '8f7eaaa104b0d9dc691cede089264d332a6578eceac9469267e6c75335f32554',
+        'HOST': 'ec2-54-217-222-254.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -125,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
 AUTH_PROFILE_MODULE = 'ignat.Person'
 
