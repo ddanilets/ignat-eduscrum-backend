@@ -1,1 +1,1 @@
-web: NODE_ENV=production PORT=$PORT node entry.js
+web: gunicorn ignat.wsgi:application
