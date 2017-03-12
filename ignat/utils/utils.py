@@ -16,11 +16,9 @@ def get_user_id_by_auth_token(token):
 
 def get_auth_token_by_user_id(user_id):
     session = Session.objects.all()
-    print user_id
     result = ''
     for sessionInstance in session:
         session_data = sessionInstance.get_decoded()
-        print sessionInstance
         if session_data.get('_auth_user_id') == str(user_id):
             result = sessionInstance.session_key
 
