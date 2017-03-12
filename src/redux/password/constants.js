@@ -1,0 +1,13 @@
+export const RESET_PASSWORD = 'password/reset/SEND';
+export const SEND_RESET_PASSWORD_FAILED = 'password/reset/FAILED';
+export const UPDATE_REPEATED_PASSWORD_ELEMENT = 'password/element/UPDATE_REPEATED_PASSWORD';
+export const UPDATE_EMAIL_ELEMENT = 'password/element/UPDATE_EMAIL';
+export const UPDATE_PASSWORD_ELEMENT = 'password/element/UPDATE_PASSWORD';
+export const REMOVE_REPEATED_PASSWORD_ELEMENT_ERROR =
+  'password/element/REMOVE_REPEATED_PASSWORD_ELEMENT_ERROR';
+export const REMOVE_EMAIL_ELEMENT_ERROR = 'password/element/REMOVE_EMAIL_ELEMENT_ERROR';
+export const REMOVE_PASSWORD_ELEMENT_ERROR = 'password/element/REMOVE_PASSWORD_ELEMENT_ERROR';
+export const ADD_REPEATED_PASSWORD_ELEMENT_ERROR =
+  'password/element/ADD_REPEATED_PASSWORD_ELEMENT_ERROR';
+export const ADD_EMAIL_ELEMENT_ERROR = 'password/element/ADD_EMAIL_ELEMENT_ERROR';
+export const ADD_PASSWORD_ELEMENT_ERROR = 'password/element/ADD_PASSWORD_ELEMENT_ERROR';

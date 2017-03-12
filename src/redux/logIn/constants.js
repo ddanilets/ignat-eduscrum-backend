@@ -1,0 +1,9 @@
+export const SEND_LOGIN = 'logIn/login/SEND';
+export const SEND_LOGIN_FAILED = 'logIn/login/FAILED';
+export const UPDATE_LOGIN_ELEMENT = 'logIn/element/UPDATE_LOGIN';
+export const UPDATE_PASSWORD_ELEMENT = 'logIn/element/UPDATE_PASSWORD';
+export const REMOVE_LOGIN_ELEMENT_ERROR = 'logIn/element/REMOVE_LOGIN_ELEMENT_ERROR';
+export const REMOVE_PASSWORD_ELEMENT_ERROR = 'logIn/element/REMOVE_PASSWORD_ELEMENT_ERROR';
+export const ADD_LOGIN_ELEMENT_ERROR = 'logIn/element/ADD_LOGIN_ELEMENT_ERROR';
+export const ADD_PASSWORD_ELEMENT_ERROR = 'logIn/element/ADD_PASSWORD_ELEMENT_ERROR';
+export const LOGIN_USER = 'user/login/SUCCESS';

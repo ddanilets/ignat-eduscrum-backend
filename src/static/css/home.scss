@@ -1,0 +1,454 @@
+@-webkit-keyframes flying-ignat {
+  0% {
+    top: 8rem;
+  }
+  100% {
+    top: 10rem;
+  }
+}
+
+@-moz-keyframes flying-ignat {
+  0% {
+    top: 8rem;
+  }
+  100% {
+    top: 10rem;
+  }
+}
+
+@-o-keyframes flying-ignat {
+  0% {
+    top: 8rem;
+  }
+  100% {
+    top: 10rem;
+  }
+}
+
+@keyframes flying-ignat {
+  0% {
+    top: 8rem;
+  }
+  100% {
+    top: 10rem;
+  }
+}
+
+.home-body {
+  display: flex;
+  width: 100%;
+
+  .ignat-container {
+    width: 66%;
+    background: #00a388;
+    -webkit-box-shadow: inset -13px 0px 12px 2px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: inset -13px 0px 12px 2px rgba(0, 0, 0, 0.11);
+    box-shadow: inset -13px 0px 12px 2px rgba(0, 0, 0, 0.11);
+
+    .section {
+      height: 100vh;
+      position: relative;
+
+      .books {
+        position: absolute;
+        top: -10rem;
+        left: 30rem;
+        width: 20rem;
+        height: 21rem;
+        background: url('/static/svg/1_section_BOOK.svg');
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: top 800ms, opacity 100ms;
+        -webkit-transition: top 800ms, opacity 100ms;
+
+        &.mounted {
+          top: 7rem;
+          opacity: 1;
+        }
+      }
+
+      .ignat {
+        position: absolute;
+        top: 28rem;
+        left: 32.5rem;
+        width: 15rem;
+        height: 25rem;
+        background: url('/static/svg/1_section_IGNAT.svg');
+        background-repeat: no-repeat;
+      }
+
+      .ignat-with-books {
+        position: absolute;
+        top: 15rem;
+        left: 5rem;
+        width: 40rem;
+        height: 40rem;
+        background: url('/static/svg/2_section.svg');
+        background-repeat: no-repeat;
+      }
+
+      .clock {
+        position: absolute;
+        top: 38rem;
+        left: 48.5rem;
+        width: 7rem;
+        height: 7rem;
+        background: url('/static/svg/1_section_TIME.svg');
+        background-repeat: no-repeat;
+      }
+
+      .flying-ignat {
+        position: absolute;
+        top: 8rem;
+        left: 66.5rem;
+        width: 20rem;
+        height: 20rem;
+        background: url('/static/svg/3_section_ignat.svg');
+        background-repeat: no-repeat;
+        -webkit-animation: flying-ignat 2s infinite alternate linear; /* Safari 4+ */
+        -moz-animation: flying-ignat 2s infinite alternate linear; /* Fx 5+ */
+        -o-animation: flying-ignat 2s infinite alternate linear; /* Opera 12+ */
+        animation: flying-ignat 2s infinite alternate linear; /* IE 10+, Fx 29+ */
+      }
+
+      .books-stand {
+        position: absolute;
+        top: 30rem;
+        left: 60rem;
+        width: 22rem;
+        height: 22rem;
+        background: url('/static/svg/3_section_BOOKS.svg');
+        background-repeat: no-repeat;
+      }
+
+      .footnote {
+        position: absolute;
+        color: white;
+        width: 32rem;
+        top: 5rem;
+        left: 5rem;
+
+        .footnote-headline {
+          font-family: Archivo Black;
+          font-size: 9rem;
+          padding-bottom: 2rem;
+        }
+
+        .footnote-description {
+          line-height: 1.2;
+          font-size: 2.5rem;
+        }
+      }
+
+      .line {
+        font-size: 2rem;
+        position: absolute;
+        color: white;
+        border-bottom: 1px solid white;
+        padding-left: 5rem;
+        padding-right: 5rem;
+
+        &.ignat-name {
+          top: 29rem;
+          left: 20rem;
+          opacity: 0;
+          -webkit-transition: left 500ms, opacity 100ms;
+          -moz-transition: left 500ms, opacity 100ms;
+          -ms-transition: left 500ms, opacity 100ms;
+          -o-transition: left 500ms, opacity 100ms;
+          transition: left 500ms, opacity 100ms;
+
+          &::after {
+            position: absolute;
+            left: 100%;
+            bottom: -2%;
+            content: '';
+            margin: auto 0;
+            border-bottom: white solid 1px;
+            opacity: 1;
+            height: 2.5rem;
+            width: 4rem;
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+            -webkit-transition: left 500ms, bottom 500ms, transform 500ms;
+            -moz-transition: left 500ms, bottom 500ms, transform 500ms;
+            -ms-transition: left 500ms, bottom 500ms, transform 500ms;
+            -o-transition: left 500ms, bottom 500ms, transform 500ms;
+            transition: left 500ms, bottom 500ms, transform 500ms;
+            -webkit-transition-delay: 500ms; /* Safari */
+            transition-delay: 500ms;
+          }
+
+          &.mounted {
+            opacity: 1;
+            left: 14rem;
+
+            &::after {
+              bottom: -45.7%;
+              left: 102%;
+              -webkit-transform: rotateZ(30deg);
+              -moz-transform: rotateZ(30deg);
+              -ms-transform: rotateZ(30deg);
+              -o-transform: rotateZ(30deg);
+              transform: rotateZ(30deg);
+            }
+          }
+        }
+
+        &.books-hard {
+          top: 18rem;
+          left: 47rem;
+          opacity: 0;
+          -webkit-transition: left 500ms, opacity 100ms;
+          -moz-transition: left 500ms, opacity 100ms;
+          -ms-transition: left 500ms, opacity 100ms;
+          -o-transition: left 500ms, opacity 100ms;
+          transition: left 500ms, opacity 100ms;
+
+          &::before {
+            position: absolute;
+            left: -17%;
+            bottom: -2%;
+            content: '';
+            margin: auto 0;
+            border-bottom: white solid 1px;
+            opacity: 1;
+            height: 2.5rem;
+            width: 4rem;
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+            -webkit-transition: left 500ms, bottom 500ms, transform 500ms;
+            -moz-transition: left 500ms, bottom 500ms, transform 500ms;
+            -ms-transition: left 500ms, bottom 500ms, transform 500ms;
+            -o-transition: left 500ms, bottom 500ms, transform 500ms;
+            transition: left 500ms, bottom 500ms, transform 500ms;
+            -webkit-transition-delay: 500ms; /* Safari */
+            transition-delay: 500ms;
+          }
+
+          &.mounted {
+            opacity: 1;
+            left: 52rem;
+
+            &::before {
+              bottom: -45.7%;
+              left: -19%;
+              -webkit-transform: rotateZ(-30deg);
+              -moz-transform: rotateZ(-30deg);
+              -ms-transform: rotateZ(-30deg);
+              -o-transform: rotateZ(-30deg);
+              transform: rotateZ(-30deg);
+            }
+          }
+        }
+
+        &.time-ticks {
+          top: 34rem;
+          left: 52rem;
+          opacity: 0;
+          -webkit-transition: left 500ms, opacity 100ms;
+          -moz-transition: left 500ms, opacity 100ms;
+          -ms-transition: left 500ms, opacity 100ms;
+          -o-transition: left 500ms, opacity 100ms;
+          transition: left 500ms, opacity 100ms;
+
+          &::before {
+            position: absolute;
+            left: -17%;
+            bottom: -2%;
+            content: '';
+            margin: auto 0;
+            border-bottom: white solid 1px;
+            opacity: 1;
+            height: 2.5rem;
+            width: 4rem;
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+            -webkit-transition: left 500ms, bottom 500ms, transform 500ms;
+            -moz-transition: left 500ms, bottom 500ms, transform 500ms;
+            -ms-transition: left 500ms, bottom 500ms, transform 500ms;
+            -o-transition: left 500ms, bottom 500ms, transform 500ms;
+            transition: left 500ms, bottom 500ms, transform 500ms;
+            -webkit-transition-delay: 500ms; /* Safari */
+            transition-delay: 500ms;
+          }
+
+          &.mounted {
+            opacity: 1;
+            left: 57rem;
+
+            &::before {
+              bottom: -45.7%;
+              left: -26%;
+              -webkit-transform: rotateZ(-30deg);
+              -moz-transform: rotateZ(-30deg);
+              -ms-transform: rotateZ(-30deg);
+              -o-transform: rotateZ(-30deg);
+              transform: rotateZ(-30deg);
+            }
+          }
+        }
+
+        &.solution {
+          top: 24rem;
+          left: 37rem;
+          opacity: 0;
+          -webkit-transition: left 500ms, opacity 100ms;
+          -moz-transition: left 500ms, opacity 100ms;
+          -ms-transition: left 500ms, opacity 100ms;
+          -o-transition: left 500ms, opacity 100ms;
+          transition: left 500ms, opacity 100ms;
+
+          &::before {
+            position: absolute;
+            left: -17%;
+            bottom: -2%;
+            content: '';
+            margin: auto 0;
+            border-bottom: white solid 1px;
+            opacity: 1;
+            height: 2.5rem;
+            width: 4rem;
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+            -webkit-transition: left 500ms, bottom 500ms, transform 500ms;
+            -moz-transition: left 500ms, bottom 500ms, transform 500ms;
+            -ms-transition: left 500ms, bottom 500ms, transform 500ms;
+            -o-transition: left 500ms, bottom 500ms, transform 500ms;
+            transition: left 500ms, bottom 500ms, transform 500ms;
+          }
+
+          &.mounted {
+            opacity: 1;
+            left: 41rem;
+
+            &::before {
+              bottom: -45.7%;
+              left: -23%;
+              -webkit-transform: rotateZ(-30deg);
+              -moz-transform: rotateZ(-30deg);
+              -ms-transform: rotateZ(-30deg);
+              -o-transform: rotateZ(-30deg);
+              transform: rotateZ(-30deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .login-container {
+    width: 33%;
+    position: fixed;
+    right: 0;
+
+    .login-form {
+      width: 80%;
+      margin: 0 auto;
+      .login-wrapper {
+        padding-top: 15rem;
+
+        .logo-headline {
+          flex-wrap: wrap;
+          display: flex;
+          justify-content: space-around;
+          padding-bottom: 2rem;
+          .logo {
+            color: #00a388;
+            font-family: Archivo Black;
+            font-size: 9rem;
+          }
+
+          .headline {
+            font-size: 3rem;
+            color: #d9d7d7;
+            margin-top: -2rem;
+
+          }
+        }
+        .form-row {
+          padding-bottom: 3rem;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          input {
+            border-image-source: linear-gradient(1deg, #F0BD0C 0%, #00A086 13%);
+            border-width: 0 0 2px 0;
+            border-image-slice: 1;
+            width: 90%;
+            margin: 0 auto;
+            height: 2.5rem;
+            font-size: 2.1rem;
+
+            &::-webkit-input-placeholder {
+              padding-left: 1rem;
+              color: #d9d7d7;
+            }
+          }
+          label {
+            position: absolute;
+            right: 9rem;
+            margin: auto 0;
+            opacity: 1;
+            width: 2rem;
+            height: 1.8rem;
+            background: url("/static/svg/icon_login.svg") no-repeat;
+            background-size: cover;
+            -webkit-transition: opacity 300ms;
+            -moz-transition: opacity 300ms;
+            -ms-transition: opacity 300ms;
+            -o-transition: opacity 300ms;
+            transition: opacity 300ms;
+            &:hover {
+              opacity: 0;
+            }
+          }
+        }
+
+        .form-row:nth-of-type(2n) {
+          input {
+            border-image-source: linear-gradient(1deg, #00A086 0%, #F0BD0C 13%);
+          }
+          label {
+            background: url("/static/svg/icon_passwd.svg") no-repeat;
+          }
+        }
+
+        .login-button {
+          padding-left: 6rem;
+          padding-right: 6rem;
+          border: none;
+          color: white;
+          font-size: 2rem;
+          height: 4rem;
+          border-radius: 4rem;
+          background: #F0BD0C;
+          margin-bottom: 2rem;
+        }
+        a {
+          color: #F0BD0C;
+          display: block;
+          font-size: 1.7rem;
+          text-decoration: none;
+          cursor: pointer;
+          width: 100%;
+          text-align: right;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}

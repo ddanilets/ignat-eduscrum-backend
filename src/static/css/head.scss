@@ -1,0 +1,32 @@
+.header{
+  z-index: 10;
+  height: 7rem;
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  background: #00a388;
+
+  .logo {
+    font-family: Archivo Black;
+    color: white;
+    font-size: 3rem;
+    padding-top: 1.3rem;
+    padding-left: 15rem;
+    padding-bottom: 1.3rem;
+  }
+  .menu {
+    width: 40rem;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1.6rem;
+    font-size: 2.3rem;
+    color: white;
+
+    .item {
+      cursor: pointer;
+    }
+  }
+}
+

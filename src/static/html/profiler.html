@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profiler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="#">
+                <img src="../img/logo.png">
+            </a>
+        </div>
+        <nav>
+            <div class="search-form">
+                <input type="text" placeholder="Search">
+                <button class="btn btn-icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#search"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="logout">
+                <button class="btn btn-icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#logout"></use>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<main class="profiler-page">
+    <aside>
+        <h2>Menu</h2>
+
+        <ul>
+            <li class="active">
+                <div class="icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#avatar"></use>
+                    </svg>
+                </div>
+                <span class="menu-text">Profile</span>
+            </li>
+            <li>
+                <div class="icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#plus"></use>
+                    </svg>
+                </div>
+                <span class="menu-text">Add Project</span>
+            </li>
+            <li>
+                <div class="icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#idea"></use>
+                    </svg>
+                </div>
+                <span class="menu-text">Project</span>
+            </li>
+            <li>
+                <div class="icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#list"></use>
+                    </svg>
+                </div>
+                <span class="menu-text">Task</span>
+            </li>
+            <li>
+                <div class="icon">
+                    <svg viewBox="0 0 512 512">
+                        <use xlink:href="../icon/all.svg#bar-chart"></use>
+                    </svg>
+                </div>
+                <span class="menu-text">Dashboard</span>
+            </li>
+        </ul>
+    </aside>
+
+    <article>
+
+        <div class="register">
+            <div class="register-header">
+                <div class="text">
+                    <h2>Edit</h2>
+                    <p>Want to edit information fill out this form</p>
+                </div>
+                <div class="icon">
+
+                </div>
+            </div>
+
+            <form class="register-form">
+                <div class="name-rows">
+                    <div class="form-row">
+                        <input type="text" minlength="3" name="_username" placeholder="Username*">
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#avatar"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" minlength="3" name="_first-name" placeholder="First Name*">
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#avatar"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" minlength="3" name="_last-name" placeholder="Last Name*">
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#avatar"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="password-rows">
+                    <div class="form-row">
+                        <input type="password" name="_password" placeholder="Password*"> <!--status-valid="true"-->
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#security"></use>
+                                </svg>
+                            </div>
+                            <div class="icon status">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#view"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <input type="password" name="_password-confirm" placeholder="Confirm password*">
+                        <!--status-valid="false"-->
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#security"></use>
+                                </svg>
+                            </div>
+                            <div class="icon status">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#hide"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="social-rows">
+                    <div class="form-row">
+                        <input type="text" minlength="3" name="_email" placeholder="Email*">
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#mail"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" minlength="3" name="_skype" placeholder="Skype">
+                        <label>
+                            <div class="icon">
+                                <svg viewBox="0 0 512 512">
+                                    <use xlink:href="../icon/all.svg#social-media"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn button-submit">SUBMIT</button>
+            </form>
+        </div>
+
+    </article>
+</main>
+
+</body>
+</html>

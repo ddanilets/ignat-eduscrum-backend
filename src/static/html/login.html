@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="#">
+                <img src="../img/logo.png">
+            </a>
+        </div>
+        <nav></nav>
+    </div>
+</header>
+
+<main class="login-page">
+    <div class="container">
+        <div class="login">
+            <div class="login-header">
+                <div class="text">
+                    <h2>login</h2>
+                    <p>Want to login fill out this form</p>
+                </div>
+                <div class="icon">
+
+                </div>
+            </div>
+
+            <form class="login-form">
+                <div class="form-row">
+                    <input type="text" minlength="3" name="_username" placeholder="Username*" icon="user" status-valid="true">
+                    <label>
+                        <div class="icon">
+                            <svg viewBox="0 0 512 512">
+                                <use xlink:href="../icon/all.svg#avatar"></use>
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <input type="password" name="_password" placeholder="Password*" status-valid="false">
+                    <label>
+                        <div class="icon">
+                            <svg viewBox="0 0 512 512">
+                                <use xlink:href="../icon/all.svg#security"></use>
+                            </svg>
+                        </div>
+                        <div class="icon status">
+                            <svg viewBox="0 0 512 512">
+                                <use xlink:href="../icon/all.svg#view"></use>
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+
+                <button class="btn button-submit">login</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+</body>
+</html>
