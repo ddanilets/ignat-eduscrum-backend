@@ -25,7 +25,7 @@ SECRET_KEY = '2&4)0gdvza&ex4&p^xwrt1s7s1dox3-j+*qg7c7z-ub(92cdx6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ignat-eduscrum.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['ignat-eduscrum.herokuapp.com', 'ignat-eduscrum-backend.herokuapp.com', 'localhost']
 
 
 # Application definition
