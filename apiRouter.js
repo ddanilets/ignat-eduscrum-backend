@@ -6,24 +6,29 @@ const baseUrl = process.env.NODE_ENV === 'production' ? `localhost:5001` :
     'localhost:5000';
 
 const handler = (url, method) => {
-    return (r, q) => {
+    return (q, r) => {
         new Promise((resolve, reject) => {
+            console.log(q);
             request(method, baseUrl + url)
                 .set('Content-Type', 'application/json')
+                .send(q.body)
                 .end((err, res) => {
+                    console.log(err);
                     if (err) {
-                        reject(err || res.body);
+                        reject(err || JSON.parse(res.body.text));
                     } else {
-                        resolve(res);
+                        resolve(JSON.parse(res.text));
                     }
                 });
         }).then(data => {
             r.send(data)
+        }).catch(err => {
+            r.status(500).send(err)
         });
     }
 }
 
 
-router.get('/users/login/', handler('/users/login/', 'GET'));
+router.post('/users/login/', handler('/users/login/', 'POST'));
 
 export default router
