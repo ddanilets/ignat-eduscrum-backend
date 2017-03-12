@@ -1,7 +1,7 @@
 import request from 'superagent';
 
-const baseUrl = process.env.NODE_ENV === 'production' ? `https://ignat-eduscrum.herokuapp.com:${process.env.DJANGO_PORT}` :
-  'http://localhost:5000';
+const baseUrl = process.env.NODE_ENV === 'production' ? `https://ignat-eduscrum.herokuapp.com/api` :
+  '/api';
 
 export function sendPostRequest(url, data, query, contentType = 'application/json') {
   return new Promise((resolve, reject) => {

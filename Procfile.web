@@ -1,2 +1,2 @@
-django: gunicorn ignat.wsgi:application --log-file --bind 127.0.0.1:$DJANGO_PORT
-node: NODE_ENV=production PORT=80 node entry.js
+django: gunicorn ignat.wsgi:application --log-file --bind 0.0.0.0:$DJANGO_PORT
+node: NODE_ENV=production PORT=8001 node entry.js

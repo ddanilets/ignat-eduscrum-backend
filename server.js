@@ -9,6 +9,7 @@ import routes from './src/config/routes';
 import ReactDOM from 'react-dom/server';
 import configureStore from './src/redux/createStore';
 import Html from './src/html/Html';
+import apiRouter from './apiRouter';
 
 
 const server = express();
@@ -18,6 +19,7 @@ server.use('/static', express.static(`${__dirname}/src/static`));
 
 server.use(bodyParser.json({ limit: '50mb' }));
 
+server.use('/api', apiRouter);
 server.use((req, res) => {
   const memoryHistory = createHistory(req.originalUrl);
   const { store, history } = configureStore(memoryHistory);
