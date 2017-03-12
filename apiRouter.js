@@ -2,8 +2,8 @@ import request from 'superagent';
 
 var router = require('express').Router();
 
-const baseUrl = process.env.NODE_ENV === 'production' ? `localhost:5001` :
-    'localhost:5000';
+const baseUrl = process.env.NODE_ENV === 'production' ? `0.0.0.0:5001` :
+    '0.0.0.0:5000';
 
 const handler = (url, method) => {
     return (q, r) => {
