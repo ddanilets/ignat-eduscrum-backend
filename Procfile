@@ -1,1 +1,1 @@
-web: gunicorn ignat.wsgi:application --log-file - & npm run prod
+web: bin/runsvdir-dyno
