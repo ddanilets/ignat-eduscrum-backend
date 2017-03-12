@@ -1,10 +1,10 @@
+/* eslint-disable prefer-template*/
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const webpackConfig = {
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.jsx'],
   },
   entry: {
     app: [
@@ -14,7 +14,6 @@ const webpackConfig = {
       'react',
       'redux',
       'react-router',
-      'react-bootstrap',
     ],
   },
   output: {
@@ -29,7 +28,7 @@ const webpackConfig = {
         exclude: /node_modules/,
         loader: require.resolve('babel-loader'),
         query: {
-          presets: ['es2015', 'react'],
+          presets: ['es2015', 'react', 'stage-0'],
         },
       },
       { test: /\.json$/, loader: 'json-loader' },
@@ -39,16 +38,14 @@ const webpackConfig = {
       { test: /\.png$/, loader: 'url-loader' },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css'),
+        loader: 'style!css',
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style',
-          ['css-loader', 'postcss-loader', 'sass-loader']),
+        loader: 'style!css!sass',
       },
     ],
   },
-  postcss: [require('autoprefixer')({ browsers: ['>1%'] })],
   node: {
     setImmediate: false,
     console: true,
@@ -70,9 +67,6 @@ const webpackConfig = {
       compress: {
         warnings: false,
       },
-    }),
-    new ExtractTextPlugin('style.min.css', {
-      allChunks: true,
     }),
   ],
 };
