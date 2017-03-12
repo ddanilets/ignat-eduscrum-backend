@@ -16,9 +16,10 @@ class PersonSerializer(serializers.Serializer):
 
     def create(self, data):
         # Create the user instance
-        person = user.Person.create(username=data['user.username'],
+        data = data['data']
+        person = user.Person.create(username=data['username'],
                                     first_name=data['first_name'],
                                     last_name=data['last_name'],
-                                    email=data['user.email'],
-                                    password=data['user.password'])
+                                    email=data['email'],
+                                    password=data['password'])
         return person

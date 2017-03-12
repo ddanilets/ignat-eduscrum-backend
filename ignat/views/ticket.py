@@ -17,21 +17,18 @@ class TicketViewSet(viewsets.ModelViewSet):
     serializer_class = TicketSerializer
 
     def create(self, request, **kwargs):
-        if request.COOKIES['sessionid'] is None:
-            raise SuspiciousOperation("No auth!")
-        else:
-            uid = get_user_id_by_session_id(request)
-            rawProjectData = {
-                'creator_id': uid,
-                'name': request.data['name'],
-                'project_id': request.data['project_id'],
-                'description': request.data['description'],
-                'assignee': request.data.get('assignee_id'),
-                'priority': request.data.get('priority'),
-                'estimate': request.data.get('estimate'),
-            }
-            serializer = TicketSerializer().create(data=rawProjectData)
-            return Response()
+        uid = request.data['id']
+        rawProjectData = {
+            'creator_id': uid,
+            'name': request.data['name'],
+            'project_id': request.data['project_id'],
+            'description': request.data['description'],
+            'assignee': request.data.get('assignee_id'),
+            'priority': request.data.get('priority'),
+            'estimate': request.data.get('estimate'),
+        }
+        serializer = TicketSerializer().create(data=rawProjectData)
+        return Response()
 
     @detail_route(methods=['post'])
     def add_attachment(self, request, pk=None):

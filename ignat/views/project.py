@@ -18,18 +18,15 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 
     def create(self, request, **kwargs):
-        if request.COOKIES['sessionid'] is None:
-            raise SuspiciousOperation("No auth!")
-        else:
-            uid = get_user_id_by_session_id(request)
-            rawProjectData = {
-                'user_id': uid,
-                'name': request.POST['name'],
-                'deadline': request.POST['deadline'],
-                'description': request.POST['description'],
-            }
-            serializer = ProjectSerializer().create(data=rawProjectData)
-            return Response()
+        uid = request.data['id']
+        rawProjectData = {
+            'user_id': uid,
+            'name': request.data['name'],
+            'deadline': request.data['deadline'],
+            'description': request.data['description'],
+        }
+        serializer = ProjectSerializer().create(data=rawProjectData)
+        return Response()
 
     @list_route(methods=['post'])
     def add_member(self, request, **kwargs):
@@ -60,30 +57,23 @@ class ProjectViewSet(viewsets.ModelViewSet):
     @detail_route(methods=['get'])
     def list_members(self, request, project_id=None):
         if request.method == 'GET':
-
-            if request.COOKIES['sessionid'] is None:
-                raise SuspiciousOperation("No auth!")
-            else:
-                pid = project_id
-                queryset = project.ProjectMember.objects.all().filter(project_id=pid).values()
-                response = []
-                for item in queryset:
-                    response.append(model_to_dict(user.Person.objects.get(id=item['user_id'])))
-                return Response(response)
+            pid = project_id
+            queryset = project.ProjectMember.objects.all().filter(project_id=pid).values()
+            response = []
+            for item in queryset:
+                response.append(model_to_dict(user.Person.objects.get(id=item['user_id'])))
+            return Response(response)
 
     @detail_route(methods=['get'])
     def list_project(self, request, project_id=None):
         if request.method == 'GET':
 
-            if request.COOKIES['sessionid'] is None:
-                raise SuspiciousOperation("No auth!")
-            else:
-                proj = project.Project.objects.get(id=project_id)
-                response = {
-                    'tickets': [],
-                    'project': model_to_dict(proj),
-                }
-                queryset = ticket.Ticket.objects.filter(project_id=project_id).values()
-                for item in queryset:
-                    response['tickets'].append(item)
-                return Response(response)
+            proj = project.Project.objects.get(id=project_id)
+            response = {
+                'tickets': [],
+                'project': model_to_dict(proj),
+            }
+            queryset = ticket.Ticket.objects.filter(project_id=project_id).values()
+            for item in queryset:
+                response['tickets'].append(item)
+            return Response(response)
