@@ -19,7 +19,6 @@ server.use('/static', express.static(`${__dirname}/src/static`));
 
 server.use(bodyParser.json({ limit: '50mb' }));
 
-server.use('/api', apiRouter);
 server.use((req, res) => {
   const memoryHistory = createHistory(req.originalUrl);
   const { store, history } = configureStore(memoryHistory);
