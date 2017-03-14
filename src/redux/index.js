@@ -8,6 +8,7 @@ import userReducer from './user/reducer';
 import currentProjectReducer from './currentProject/reducer';
 import projectsReducer from './projects/reducer';
 import ticketsReducer from './tickets/reducer';
+import ticketReducer from './ticket/reducer';
 
 export default combineReducers({
   routing: routerReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   currentProject: currentProjectReducer,
   projects: projectsReducer,
   tickets: ticketsReducer,
+  ticket: ticketReducer,
 });

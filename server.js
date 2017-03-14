@@ -14,6 +14,7 @@ import apiRouter from './apiRouter';
 
 const server = express();
 
+
 server.use('/build', express.static(`${__dirname}/build`));
 server.use('/static', express.static(`${__dirname}/src/static`));
 

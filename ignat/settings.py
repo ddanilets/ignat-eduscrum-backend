@@ -82,11 +82,14 @@ WSGI_APPLICATION = 'ignat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd49n3fg1jaqghb',
-        'USER': 'rsuqwqiyzjczqr',
-        'PASSWORD': '8f7eaaa104b0d9dc691cede089264d332a6578eceac9469267e6c75335f32554',
-        'HOST': 'ec2-54-217-222-254.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd9ibqol282ai58',
+        'USER': 'cippcesegzwvvi',
+        'PASSWORD': 'd8cfb91cbfd7480a2c63455ef5b11d22746a9725661bdadc020d9578b3dfd848',
+        'HOST': 'ec2-23-21-80-230.compute-1.amazonaws.com',
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 

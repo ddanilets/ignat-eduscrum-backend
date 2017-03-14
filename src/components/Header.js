@@ -15,6 +15,16 @@ class Header extends React.PureComponent {
         <div className="logo">IGNAT</div>
         <div className="menu">
           <div className="item" onClick={() => {
+            ::this.navigateTo('create-project');
+          }}>
+            Создать проект
+          </div>
+          <div className="item" onClick={() => {
+            ::this.navigateTo('create-ticket');
+          }}>
+            Создать задачу
+          </div>
+          <div className="item" onClick={() => {
             ::this.navigateTo('project');
           }}>
             Доска

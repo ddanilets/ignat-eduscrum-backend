@@ -38,7 +38,6 @@ export function sendPatchRequest(url, data) {
   return new Promise((resolve, reject) => {
     request('PATCH', baseUrl + url)
       .set('Content-Type', 'application/json')
-      .set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1,private')
       .send(data)
       .end((err, res) => {
         if (err) {
@@ -117,8 +116,8 @@ export function removeMilestone(id, token) {
   return sendPostRequest('/api/milestone-remove', id, { token });
 }
 
-export function createProject(data, token) {
-  return sendPostRequest('/api/project-create', Object.assign(data, { token }), { token });
+export function createProject(data) {
+  return sendPostRequest('/projects/', data);
 }
 
 export function loadProjects(token) {
@@ -127,4 +126,20 @@ export function loadProjects(token) {
 
 export function loadTickets() {
   return sendGetRequest('/tickets/');
+}
+
+export function loadAllUsers() {
+  return sendGetRequest('/users/');
+}
+
+export function createTicket(data) {
+  return sendPostRequest('/tickets/', data);
+}
+
+export function updateTicket(data, id) {
+  return sendPatchRequest(`/tickets/${id}/`, data);
+}
+
+export function loadTicket(id) {
+  return sendGetRequest(`/tickets/${id}/`);
 }

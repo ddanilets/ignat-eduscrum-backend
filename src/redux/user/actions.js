@@ -1,6 +1,6 @@
 /* global VK*/
 import * as constants from './constants';
-import { getUserData, sendUserData, logoutUser } from '../../../backend';
+import { getUserData, sendUserData, logoutUser, loadAllUsers as loadUsers } from '../../../backend';
 import { push } from 'react-router-redux';
 import { loadProjects } from '../projects/actions';
 import toastr from 'toastr';
@@ -67,4 +67,21 @@ export function updateSurname(element) {
 
 export function updateSkype(element) {
   return { type: constants.UPDATE_SKYPE_ELEMENT, payload: element };
+}
+
+export function loadAllUsers() {
+  return (dispatch, getState) => {
+    const data = {};
+    const userState = getState().user;
+    data.first_name = userState.name;
+    data.last_name = userState.surname;
+    data.skype = userState.skype;
+    loadUsers()
+      .then(responce => {
+        dispatch({ type: constants.LOAD_ALL_USERS, payload: responce });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 }

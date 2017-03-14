@@ -1,0 +1,14 @@
+export const LOAD_TICKET_DATA_SUCCESS = 'ticket/data/LOAD/SUCCESS';
+export const LOAD_ATTACHEMENTS = 'ticket/data/LOAD/LOAD_ATTACHEMENTS';
+export const UPDATE_DESCRIPTION_ELEMENT = 'ticket/element/UPDATE_DESCRIPTION';
+export const UPDATE_NAME_ELEMENT = 'ticket/element/UPDATE_NAME';
+export const UPDATE_ASIGNEE_ELEMENT = 'ticket/element/UPDATE_ASIGNEE_ELEMENT';
+export const UPDATE_ESTIMATE_ELEMENT = 'ticket/element/UPDATE_ESTIMATE_ELEMENT';
+export const UPDATE_PRIORITY_ELEMENT = 'ticket/element/UPDATE_PRIORITY_ELEMENT';
+export const UPDATE_PROJECT_ELEMENT = 'ticket/element/UPDATE_PROJECT_ELEMENT';
+export const ADD_ATTACHMENT = 'ticket/element/ADD_ATTACHMENT';
+export const REMOVE_ATTACHMENT = 'ticket/element/REMOVE_ATTACHMENT';
+export const CREATE_TASK = 'ticket/ticket/CREATE';
+export const UPDATE_TASK = 'ticket/ticket/UPDATE_TASK';
+export const EDIT_TASK = 'ticket/ticket/EDIT';
+export const REINIT_REDUCER = 'ticket/reducer/INIT';

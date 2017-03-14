@@ -7,6 +7,7 @@ import DevTools from './src/redux/DevTools';
 import { Provider } from 'react-redux';
 import routes from './src/config/routes';
 import './src/static/css/main.scss';
+import 'react-infinite-calendar/styles.css'; // Make sure to import the default stylesheet
 
 window.App.user.token = localStorage.getItem('auth_token') || null;
 window.App.user.id = localStorage.getItem('id') || null;

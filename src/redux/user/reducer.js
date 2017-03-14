@@ -18,6 +18,9 @@ export default function (state = initialState, action) {
       newState.token = payload.auth_token;
       newState.id = payload.id;
       return newState;
+    case constants.LOAD_ALL_USERS:
+      newState.users = payload;
+      return newState;
     case constants.LOGOUT_USER:
       newState.token = null;
       localStorage.removeItem('auth_token');

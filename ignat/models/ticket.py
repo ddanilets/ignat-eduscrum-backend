@@ -17,6 +17,10 @@ class Ticket(models.Model):
     def create(cls, creator_id, name, description, project_id, priority=None, estimate=None, assignee=None):
         creator = Person.objects.get(user_id=creator_id)
         project = Project.objects.get(id=project_id)
+        if assignee is not None and assignee != '':
+            assignee = Person.objects.get(id=assignee)
+        else:
+            assignee = None
         ticket = cls(creator=creator, name=name, description=description, project=project, priority=priority,
                      assignee=assignee, estimate=estimate)
         ticket.save()

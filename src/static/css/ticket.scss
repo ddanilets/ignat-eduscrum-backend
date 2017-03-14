@@ -1,0 +1,124 @@
+.ticket-page {
+  padding-top: 7rem;
+
+  .ticket-fields {
+    padding-top: 4rem;
+
+    .headline {
+      font-family: Archivo Black;
+      padding-bottom: 5rem;
+      width: 100%;
+      text-align: center;
+      font-size: 3.5rem;
+      color: #00a388;
+    }
+
+    .description {
+      padding-bottom: 5rem;
+      width: 100%;
+      padding-left: 10rem;
+      font-size: 2.5rem;
+      color: #00a388;
+    }
+
+    .priority {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 2.5rem;
+      color: #00a388;
+
+      .priority-label {
+        padding-left: 10rem;
+        width: 30rem;
+        color: #d9d7d7;
+        font-size: 2.5rem;
+      }
+    }
+
+    .priority:nth-of-type(2n) {
+      padding-bottom: 5rem;
+    }
+
+    .creator {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 2.5rem;
+      color: #00a388;
+      padding-bottom: 2rem;
+
+      .creator-label {
+        padding-left: 10rem;
+        width: 30rem;
+        color: #d9d7d7;
+        font-size: 2.5rem;
+      }
+    }
+
+    .project {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 2.5rem;
+      color: #00a388;
+      padding-bottom: 2rem;
+
+      .project-label {
+        padding-left: 10rem;
+        width: 30rem;
+        color: #d9d7d7;
+        font-size: 2.5rem;
+      }
+    }
+
+    .assignee {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 2.5rem;
+      color: #00a388;
+      padding-bottom: 10rem;
+
+      .assignee-label {
+        padding-left: 10rem;
+        width: 30rem;
+        color: #d9d7d7;
+        font-size: 2.5rem;
+      }
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10rem;
+
+      .edit-link {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        height: 4rem;
+        padding-top: 0.5rem;
+        border-radius: 4rem;
+        background: #F0BD0C;
+        margin-bottom: 2rem;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      .back-link {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        border: none;
+        color: white;
+        padding-top: 0.5rem;
+        font-size: 2rem;
+        height: 4rem;
+        border-radius: 4rem;
+        background: #00a388;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

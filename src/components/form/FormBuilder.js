@@ -5,6 +5,7 @@
 import React from 'react';
 import Input from './Input.js';
 import Password from './Password.js';
+import Select from './Select.js';
 
 class FormBuilder extends React.Component {
   constructor() {
@@ -28,6 +29,8 @@ class FormBuilder extends React.Component {
           return this.renderInput(el, key);
         case 'password':
           return this.renderPassword(el, key);
+        case 'select':
+          return this.renderSelect(el, key);
         default:
           return null;
       }
@@ -47,6 +50,15 @@ class FormBuilder extends React.Component {
   renderPassword(el, key) {
     return (
       <Password
+        key={key}
+        {...el}
+      />
+    );
+  }
+  
+  renderSelect(el, key) {
+    return (
+      <Select
         key={key}
         {...el}
       />

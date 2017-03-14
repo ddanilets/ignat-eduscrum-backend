@@ -9,9 +9,14 @@ import UserProfile from '../components/UserProfile';
 import EditUserProfile from '../components/EditUserProfile';
 import ProjectCreationPage from '../components/ProjectCreationPage';
 import ProjectPage from '../components/ProjectPage';
+import TicketCreationPage from '../components/TicketCreationPage';
+import TicketEditPage from '../components/TicketEditPage';
+import Ticket from '../components/TicketPage';
 import { loadUserData as loadData } from '../redux/user/actions';
 import { loadTickets } from '../redux/tickets/actions';
 import { loadProjects } from '../redux/projects/actions';
+import { loadAllUsers } from '../redux/user/actions';
+import { reInit as reInitTickets, loadTicketData } from '../redux/ticket/actions';
 import { reInit, loadProjectData as loadProject, loadUsers } from '../redux/currentProject/actions';
 import { replace } from 'react-router-redux';
 /*
@@ -80,6 +85,31 @@ const reInitProject = (store) => {
   };
 }
 
+const loadAllData = (store) => {
+  return (nextState, r, cb) => {
+    if (!store.getState().user.token) {
+      replace(`/${store.getState().application.language}/home`);
+    }
+    store.dispatch(reInitTickets());
+    store.dispatch(loadAllUsers());
+    store.dispatch(loadProjects());
+    cb();
+  };
+}
+
+const loadAllDataForEdit = (store) => {
+  return (nextState, r, cb) => {
+    if (!store.getState().user.token) {
+      replace(`/${store.getState().application.language}/home`);
+    }
+    store.dispatch(reInitTickets());
+    store.dispatch(loadAllUsers());
+    store.dispatch(loadTicketData(nextState.params.id));
+    store.dispatch(loadProjects());
+    cb();
+  };
+}
+
 const routes = (store) => {
   return (
     <Route path="/" component={App}>
@@ -91,9 +121,21 @@ const routes = (store) => {
       <Route name="user" path=":language/user" onEnter={loadUserData(store)} header={true}
         component={UserProfile}
       />
-      <Route name="projectCreation" path=":language/create-project"
+      <Route name="projectCreation" path=":language/create-project" header={true}
         component={ProjectCreationPage}
         onEnter={reInitProject(store)}
+      />
+        <Route name="ticketCreation" path=":language/create-ticket" header={true}
+        component={TicketCreationPage}
+        onEnter={loadAllData(store)}
+      />
+        <Route name="ticket" path=":language/ticket/:id" header={true}
+        component={Ticket}
+        onEnter={loadAllDataForEdit(store)}
+      />
+        <Route name="ticketEdit" path=":language/ticket/:id/edit" header={true}
+        component={TicketEditPage}
+        onEnter={loadAllDataForEdit(store)}
       />
       <Route name="project" path=":language/project/:id"
         component={ProjectPage}

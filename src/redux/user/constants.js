@@ -5,3 +5,4 @@ export const UPDATE_NAME_ELEMENT = 'user/element/UPDATE_NAME';
 export const UPDATE_SURNAME_ELEMENT = 'user/element/UPDATE_SURNAME';
 export const UPDATE_USER_DATA = 'user/data/UPDATE';
 export const LOGOUT_USER = 'user/LOGOUT';
+export const LOAD_ALL_USERS = 'user/load/ALL';

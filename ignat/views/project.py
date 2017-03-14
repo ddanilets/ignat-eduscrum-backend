@@ -18,12 +18,13 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 
     def create(self, request, **kwargs):
-        uid = request.data['id']
+        print(request.data)
+        uid = request.data['data']['id']
         rawProjectData = {
             'user_id': uid,
-            'name': request.data['name'],
-            'deadline': request.data['deadline'],
-            'description': request.data['description'],
+            'name': request.data['data']['name'],
+            'deadline': request.data['data']['deadline'],
+            'description': request.data['data']['description'],
         }
         serializer = ProjectSerializer().create(data=rawProjectData)
         return Response()

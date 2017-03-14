@@ -14,17 +14,13 @@ export default function (state = initialState, action) {
     case constants.UPDATE_DESCRIPTION_ELEMENT:
       newState.description = payload;
       return newState;
+    case constants.UPDATE_DEADLINE:
+      newState.deadline = payload;
+      return newState;
     case constants.CREATE_PROJECT:
-      return newState;
-    case constants.ADD_MILESTONE:
-      return newState;
-    case constants.DELETE_MILESTONE:
       return newState;
     case constants.REINIT_REDUCER:
       return initialState;
-    case constants.LOAD_USERS:
-      newState.users = payload.body;
-      return newState;
     default:
       return state;
   }

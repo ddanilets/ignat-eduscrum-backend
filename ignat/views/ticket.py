@@ -17,15 +17,15 @@ class TicketViewSet(viewsets.ModelViewSet):
     serializer_class = TicketSerializer
 
     def create(self, request, **kwargs):
-        uid = request.data['id']
+        uid = request.data['data']['id']
         rawProjectData = {
             'creator_id': uid,
-            'name': request.data['name'],
-            'project_id': request.data['project_id'],
-            'description': request.data['description'],
-            'assignee': request.data.get('assignee_id'),
-            'priority': request.data.get('priority'),
-            'estimate': request.data.get('estimate'),
+            'name': request.data['data']['name'],
+            'project_id': request.data['data']['project_id'],
+            'description': request.data['data']['description'],
+            'assignee': request.data['data'].get('assignee_id'),
+            'priority': request.data['data'].get('priority'),
+            'estimate': request.data['data'].get('estimate'),
         }
         serializer = TicketSerializer().create(data=rawProjectData)
         return Response()
@@ -54,5 +54,6 @@ class TicketViewSet(viewsets.ModelViewSet):
                 queryset = ticket.TicketAttachment.objects.filter(ticket_id=tid).values()
                 response = []
                 for item in queryset:
-                    response.append(item['file'])
+                    data = {'id': item['id'], 'link': item['file']}
+                    response.append(data)
                 return Response(response)

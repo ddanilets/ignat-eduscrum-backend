@@ -31,7 +31,7 @@ const getInitialSchema = (props) => {
       type: 'input',
       id: 'login',
       labelText: '',
-      placeholder: 'Username*',
+      placeholder: 'Логин*',
       containerClassName: 'form-row',
       errorStyle: {},
       value: props.login.value,
@@ -55,7 +55,7 @@ const getInitialSchema = (props) => {
       type: 'password',
       id: 'password',
       labelText: '',
-      placeholder: 'Password*',
+      placeholder: 'Пароль*',
       containerClassName: 'form-row',
       errorStyle: {},
       value: props.password.value,
@@ -80,7 +80,7 @@ const getInitialSchema = (props) => {
       type: 'password',
       id: 'repeatPassword',
       labelText: '',
-      placeholder: 'Repeat Password*',
+      placeholder: 'Повторите пароль*',
       containerClassName: 'form-row',
       errorStyle: {},
       value: props.repeatedPassword.value,
@@ -101,7 +101,7 @@ const getInitialSchema = (props) => {
       type: 'input',
       id: 'email',
       labelText: '',
-      placeholder: 'Email*',
+      placeholder: 'Почта*',
       containerClassName: 'form-row',
       errorStyle: {},
       value: props.email.value,
@@ -123,13 +123,13 @@ const getInitialSchema = (props) => {
       type: 'input',
       id: 'first_name',
       labelText: '',
-      placeholder: 'FirstName*',
+      placeholder: 'Имя*',
       containerClassName: 'form-row',
       errorStyle: {},
       value: props.firstName.value,
       error: props.firstName.error,
       onBlur: (e) => {
-        const isValid = /\w+/.test(e.target.value);
+        const isValid = e.target.value.length;
         if (!isValid) {
           props.dispatch(addFirstNameError('Обязательное поле'));
         }
@@ -145,13 +145,13 @@ const getInitialSchema = (props) => {
       type: 'input',
       id: 'last_name',
       labelText: '',
-      placeholder: 'LastName*',
+      placeholder: 'Фамилия*',
       containerClassName: 'form-row',
       errorStyle: {},
       value: props.lastName.value,
       error: props.lastName.error,
       onBlur: (e) => {
-        const isValid = /\w+/.test(e.target.value);
+        const isValid = e.target.value.length;
         if (!isValid) {
           props.dispatch(addLastNameError('Обязательное поле'));
         }
