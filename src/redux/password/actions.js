@@ -78,7 +78,7 @@ export function setNewPassword(query) {
     sendNewPassword(data)
       .then(() => {
         toastr.success('Your password has been successfuly changed!');
-        dispatch(push(`/${getState().application.language}/login`));
+        // dispatch(push(`/${getState().application.language}/login`));
       })
       .catch(error => {
         const e = JSON.parse(error.error.response.text);

@@ -25,7 +25,7 @@ import { changeLanguage } from '../redux/application/actions';
 */
 
 
-/* const checkLanguage = (dispatch, nextState, replace) => {
+/* const chckLanguage = (dispatch, nextState, replace) => {
   const testResult = availableLocales(nextState.params.language);
   if (testResult.contains) {
     if (testResult.locale === nextState.params.language) {
@@ -70,7 +70,7 @@ const loadProjectData = (store) => {
       store.dispatch(loadProject(nextState.params.id));
       store.dispatch(loadUsers());
     } else {
-      r(`/${store.getState().application.language}/login`);
+      r(`/${store.getState().application.language}/home`);
     }
   };
 }
@@ -78,7 +78,7 @@ const loadProjectData = (store) => {
 const reInitProject = (store) => {
   return (nextState, r, cb) => {
     if (!store.getState().user.token) {
-      replace(`/${store.getState().application.language}/login`);
+      replace(`/${store.getState().application.language}/home`);
     }
     store.dispatch(reInit());
     cb();
@@ -137,12 +137,6 @@ const routes = (store) => {
         component={TicketEditPage}
         onEnter={loadAllDataForEdit(store)}
       />
-      <Route name="project" path=":language/project/:id"
-        component={ProjectPage}
-        onEnter={loadProjectData(store)}
-      />
-      <Route name="user/edit" path=":language/user-edit" onEnter={loadUserData(store)}
-             component={EditUserProfile} />
       <Route path="*" component={_404} />
     </Route>);
 };
