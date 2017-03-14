@@ -9,7 +9,7 @@ class UserProfile extends React.PureComponent {
     const data = {};
     this.props.tickets
       .filter(ticket => parseInt(ticket.creator.id, 10) === parseInt(this.props.data.id, 10)
-      || parseInt(ticket.assignee, 10) === parseInt(this.props.data.id, 10))
+      || parseInt(ticket.assignee.id, 10) === parseInt(this.props.data.id, 10))
       .map(ticket => {
         return {
           project: ticket.project.name,

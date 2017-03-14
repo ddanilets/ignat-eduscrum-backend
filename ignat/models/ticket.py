@@ -29,15 +29,21 @@ class Ticket(models.Model):
     @classmethod
     def update(cls, ticket_id, data):
         ticket = Ticket.objects.filter(id=ticket_id)[0]
-        creator_id = ticket.creator.id
         project_id = ticket.project.id
-        if data.get('creator_id'):
-            creator_id = Person.objects.get(user_id=data.get('creator_id')).id
+        assignee = ticket.assignee
+        print(data)
         if data.get('project_id'):
             project_id = Project.objects.get(id=data.get('project_id')).id
-        data['creator_id'] = creator_id
-        data['project_id'] = project_id
+        if data.get('assignee_id'):
+            assignee = Person.objects.get(id=data.get('assignee_id'))
         Ticket.objects.filter(id=ticket_id).update(**data)
+        print(assignee)
+        if assignee is not None and assignee != ticket.assignee and assignee != '':
+            Ticket.objects.filter(id=ticket_id).update(assignee=assignee)
+
+        if project_id is not None and project_id != ticket.project.id and project_id != '':
+            Ticket.objects.filter(id=ticket_id).update(project=Project.objects.get(id=project_id))
+
         return Ticket.objects.filter(id=ticket_id)[0]
 
 
