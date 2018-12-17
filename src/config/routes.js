@@ -125,9 +125,13 @@ const routes = (store) => {
         component={ProjectCreationPage}
         onEnter={reInitProject(store)}
       />
+       <Route name="project" path=":language/project/:id" header={true}
+        component={ProjectPage}
+        onEnter={reInitProject(store)}
+      />
         <Route name="ticketCreation" path=":language/create-ticket" header={true}
         component={TicketCreationPage}
-        onEnter={loadAllData(store)}
+        onEnter={loadProjectData(store)}
       />
         <Route name="ticket" path=":language/ticket/:id" header={true}
         component={Ticket}
